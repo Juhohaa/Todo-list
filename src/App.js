@@ -1,4 +1,6 @@
 import { useState } from "react";
+import TodoList from "./components/TodoList";
+import NewTodo from "./components/NewTodo"
 
 function App() {
 
@@ -46,34 +48,13 @@ function App() {
       <br/>
       <h2 className="text-center">Todo List</h2>
       <br/>
-      <input 
-            className="form-control shadow" 
-            type="text" 
-            placeholder="Add todo..."
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                addTodo(e.target.value);
-                e.target.value = null;
-              } 
-            }}
-      />
-      <ul className="list-group mt-3 shadow">
 
-        {todos.map((todo, idx) => {
-        
-        return (
-                <li className="list-group-item" key={idx} onClick={() => { todoDone(idx) }}>
-                  {
-                  (todo.done === true)
-                    ? <del>{todo.task}</del>
-                    : todo.task
-                  }
-                </li>
-              )
+      <NewTodo addTodo={addTodo}/>
 
-        })}
       
-      </ul>
+      <TodoList todos={todos} todoDone={todoDone} />
+      <br/>
+      <p className="small">Click the todo item to make it done!</p>
 
     </div>
   );
