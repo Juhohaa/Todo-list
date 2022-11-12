@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Simple ToDo list
 
 ![Todo-list-page](Todo-list.png)
 
