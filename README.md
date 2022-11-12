@@ -1,4 +1,4 @@
-# Simple ToDo list
+# Simple Todo list
 
 ![Todo-list-page](Todo-list.png)
 
